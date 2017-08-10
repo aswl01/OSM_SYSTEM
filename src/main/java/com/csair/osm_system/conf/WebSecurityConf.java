@@ -29,8 +29,10 @@ public class WebSecurityConf extends WebSecurityConfigurerAdapter {
 		http
 			.authorizeRequests()
 				.antMatchers(uriSignIn, "/api/time").permitAll()
-				.antMatchers("/api/projects").hasRole("PRJ_MGR")
-				.antMatchers("/api/staffs", "/api/roles").hasRole("ADMIN")
+				.antMatchers("/api/proj/**", "/api/applies/prj/**").hasRole("PRJ_MGR")
+				.antMatchers("/api/attends").hasRole("OS_STAFF")
+				.antMatchers("/api/applies/supplier/**").hasRole("SUPPLIER")
+				.antMatchers("/api/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
 				.and();
 		http

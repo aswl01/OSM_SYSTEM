@@ -82,10 +82,15 @@ public class StaffDemo {
 		staff.setCode("123");
 		staff.setPassword("csairmind");
 		staff.setName("hehe");
-		Set<OSMRole> osm_Roles = new HashSet<>();
-		osm_Roles.addAll(osmRoleService.findAll());
-		staff.setOsmRoles(osm_Roles);
-		staffService.addStaff(staff);
+		Set<OSMRole> set=new HashSet<OSMRole>();         
+        set.addAll(osmRoleService.findAll());
+		staff.setOsmRoles(set);
+		try {
+			staffService.addStaff(staff);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test

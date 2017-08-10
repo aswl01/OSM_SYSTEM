@@ -9,14 +9,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Message")
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 public class Message extends Base implements Serializable{
 
 	private static final long serialVersionUID = -8829193185156979096L;

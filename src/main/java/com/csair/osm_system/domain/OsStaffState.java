@@ -13,11 +13,11 @@ import javax.persistence.TemporalType;
 
 import com.csair.osm_system.model.Base;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "OS_Staff_State")
 public class OsStaffState extends Base implements Serializable{

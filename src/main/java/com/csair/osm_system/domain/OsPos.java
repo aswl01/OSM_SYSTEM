@@ -6,12 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "OS_Pos")
 public class OsPos extends Base implements Serializable{

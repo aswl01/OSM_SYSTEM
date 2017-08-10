@@ -3,6 +3,8 @@ package com.csair.osm_system.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,9 +24,21 @@ public class StaffController {
 	@Autowired
 	private StaffService staffService;
 	
+	private ResponseEntity<Staff> responseByStaff(Staff staff) {
+		HttpStatus status = staff == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK;
+		return new ResponseEntity<Staff>(staff, status);
+	}
+	
 	@PostMapping
-	public Staff addStaff(@RequestBody Staff staff) {
-		return staffService.addStaff(staff);
+	public ResponseEntity<Staff> addStaff(@RequestBody Staff staff) {
+		Staff response = null;
+		try {
+			response = staffService.addStaff(staff);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		ResponseEntity<Staff> entity = responseByStaff(response);
+		return entity;
 	}
 	
 	@GetMapping

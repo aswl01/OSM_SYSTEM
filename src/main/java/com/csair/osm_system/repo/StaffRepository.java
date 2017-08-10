@@ -9,4 +9,7 @@ import com.csair.osm_system.domain.Staff;
 public interface StaffRepository extends CrudRepository<Staff, Long> {
 	
 	Staff findByCode(String code);
+
+	Staff findById(Long id);
+	
 }

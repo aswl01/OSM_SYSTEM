@@ -7,15 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="bid")
 public class Bid implements Serializable{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3192214657603368017L;
 
 	@Id
 	@ManyToOne

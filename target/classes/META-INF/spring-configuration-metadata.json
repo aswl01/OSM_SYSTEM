@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.csair.osm_system.conf.UriProperties",
+      "name": "uri",
+      "type": "com.csair.osm_system.conf.UriProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.csair.osm_system.conf.UriProperties",
+      "name": "uri.signin",
+      "type": "java.lang.String"
+    }
+  ]
+}

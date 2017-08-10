@@ -2,21 +2,22 @@ package com.csair.osm_system.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.csair.osm_system.model.Base;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "OS_Empl_Form")
 public class OsEmplForm extends Base implements Serializable{
@@ -26,6 +27,10 @@ public class OsEmplForm extends Base implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="fk_proj_id")
 	private Proj proj;
+	
+	@OneToMany
+	@JoinColumn(name="fk_details_id")
+	Set<OsEmplFormDetail> osEmplFormDetails;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date applDate;

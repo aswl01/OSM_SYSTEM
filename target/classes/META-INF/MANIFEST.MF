@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: OSM-SYSTEM
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: admin
+Built-By: Administrator
 Implementation-Vendor-Id: com.example
 Build-Jdk: 1.8.0_141
 Implementation-URL: http://projects.spring.io/spring-boot/OSM-SYSTEM/

@@ -54,7 +54,7 @@ public class ApiUsernamePasswordAuthenticationFilter extends UsernamePasswordAut
 		try {
 			JsonNode data = mapper.readTree(request.getReader());
 
-			String username = data.get("username").asText();
+			String username = data.get("account").asText();
 			String password = data.get("password").asText();
 
 			if (username == null) {

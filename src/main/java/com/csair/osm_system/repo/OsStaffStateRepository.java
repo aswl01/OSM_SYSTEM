@@ -11,4 +11,6 @@ public interface OsStaffStateRepository extends Repository<OsStaffState, Long> {
 
 	List<OsStaffState> findByOsStaffAndValidation(OsStaff osStaff, Boolean validate);
 
+	OsStaffState findFirstByOsStaffAndValidation(OsStaff osStaff, boolean b);
+
 }

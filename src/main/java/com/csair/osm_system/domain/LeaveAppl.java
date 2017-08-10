@@ -11,14 +11,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.csair.osm_system.model.Base;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Leave_Appl")
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 public class LeaveAppl extends Base implements Serializable{
 
 	private static final long serialVersionUID = 5193897768078558936L;

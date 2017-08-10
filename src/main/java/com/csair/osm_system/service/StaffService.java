@@ -18,18 +18,13 @@ public class StaffService implements UserDetailsService {
 	@Autowired
 	private StaffRepository staffRepository;
 
-	public Staff addStaff(Staff staff) {
-		try {
-			if (staffRepository.findByCode(staff.getCode()) == null) {
-				return staffRepository.save(staff);
-			} else {
-				throw new Exception("UserCode already exists, please try another one.");
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
+	public Staff addStaff(Staff staff) throws Exception {
+
+		if (staff.getCode() != null && staff.getPassword() != null && staffRepository.findByCode(staff.getCode()) == null) {
+			return staffRepository.save(staff);
+		} else {
+			throw new Exception("UserCode already exists, please try another one.");
 		}
-		return null;
 	}
 
 	public List<Staff> findAll() {
@@ -57,8 +52,11 @@ public class StaffService implements UserDetailsService {
 	}
 
 	public Staff findByCode(String code) {
-		Staff staff = staffRepository.findByCode(code);
-		return staff;
+		return staffRepository.findByCode(code);
+	}
+	
+	public Staff findById(long id) {
+		return staffRepository.findOne(id);
 	}
 
 	@Override

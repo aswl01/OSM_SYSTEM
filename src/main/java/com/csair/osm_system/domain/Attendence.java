@@ -10,14 +10,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.csair.osm_system.model.Base;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Attendence")
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 public class Attendence extends Base implements Serializable{
 
 	private static final long serialVersionUID = -1757454114524253131L;

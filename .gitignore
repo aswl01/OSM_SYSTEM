@@ -40,3 +40,7 @@ local.properties
 .texlipse
 
 *.class
+
+application.properties
+
+MANIFEST.MF

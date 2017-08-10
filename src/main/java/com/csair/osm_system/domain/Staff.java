@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,23 +23,30 @@ import org.springframework.util.StringUtils;
 import com.csair.osm_system.model.Base;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "Staff")
 public class Staff extends Base implements Serializable, UserDetails{
 
 	private static final long serialVersionUID = 4063783665155406141L;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@ManyToOne
+	@JoinColumn(name = "fk_supplier_id")
+	@JsonIgnore
+	private Supplier supplier;
+	
+	@OneToOne
 	@JoinColumn(name="fk_os_staff_id")
+	@JsonIgnore
 	private OsStaff osStaff;
 
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne
 	@JoinColumn(name="fk_cs_staff_id")
+	@JsonIgnore
 	private CsStaff csStaff;
 	
 	@ManyToMany(fetch=FetchType.EAGER)

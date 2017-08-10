@@ -1,7 +1,6 @@
 package com.csair.osm_system.model;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -17,17 +16,16 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@Data
+@Getter
+@Setter
 public abstract class Base {
 	@Id
-//	@GeneratedValue(generator = "uuid2")
-//	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-//	@Column(columnDefinition = "BINARY(16)")
 	private long id;
 	
 	@Temporal(TemporalType.TIMESTAMP)

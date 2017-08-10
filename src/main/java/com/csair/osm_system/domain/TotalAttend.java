@@ -9,14 +9,14 @@ import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "Total_Attend")
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 public class TotalAttend extends Base implements Serializable{
 
 	private static final long serialVersionUID = -9047082244982683043L;

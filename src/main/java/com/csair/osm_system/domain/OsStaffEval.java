@@ -12,11 +12,11 @@ import javax.persistence.Table;
 import com.csair.osm_system.model.Base;
 import com.csair.osm_system.model.trialFlag;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "OS_Staff_Eval")
 public class OsStaffEval extends Base implements Serializable{

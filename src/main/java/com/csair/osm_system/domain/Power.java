@@ -7,11 +7,11 @@ import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "Power")
 public class Power extends Base implements Serializable{

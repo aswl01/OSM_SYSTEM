@@ -6,16 +6,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "OS_Staff")
 public class OsStaff extends Base implements Serializable{
@@ -25,10 +24,6 @@ public class OsStaff extends Base implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="fk_supplier_id")
 	private Supplier supplier;
-	
-	@OneToOne
-	@JoinColumn(name="fk_staff_id")
-	private Staff staff;
 	
 	@Column(length=18)
 	private String nationalId;

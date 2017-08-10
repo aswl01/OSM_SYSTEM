@@ -8,12 +8,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 @Entity
 @Table(name = "Proj")
 public class Proj extends Base implements Serializable{
@@ -31,8 +32,9 @@ public class Proj extends Base implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="fk_project_manager_id")
-	private CsStaff csStaff;
+	@JsonIgnore
+	private CsStaff projectManager;
 	
-	private Boolean termination;
+	private Boolean termination = false;
 
 }

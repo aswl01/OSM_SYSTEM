@@ -5,14 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import com.csair.osm_system.model.Base;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "Dept")
-@Data
-@EqualsAndHashCode(callSuper=true)
+@Getter
+@Setter
 public class Dept extends Base implements Serializable{
 
 	private static final long serialVersionUID = -383080803463597851L;
